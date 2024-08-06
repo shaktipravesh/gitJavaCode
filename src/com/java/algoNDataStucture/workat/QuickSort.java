@@ -1,4 +1,4 @@
-package com.java.algoNDataStucture;
+package com.java.algoNDataStucture.workat;
 
 public class QuickSort {
 

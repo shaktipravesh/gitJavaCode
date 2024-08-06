@@ -1,4 +1,4 @@
-package com.java.algoNDataStucture;
+package com.java.algoNDataStucture.workat;
 
 import java.util.ArrayList;
 import java.util.List;

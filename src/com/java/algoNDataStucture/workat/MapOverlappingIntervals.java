@@ -1,4 +1,4 @@
-package com.java.algoNDataStucture;
+package com.java.algoNDataStucture.workat;
 
 import java.util.Map;
 import java.util.Map.Entry;
