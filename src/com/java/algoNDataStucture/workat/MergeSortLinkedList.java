@@ -1,7 +1,5 @@
 package com.java.algoNDataStucture.workat;
 
-import java.util.Scanner;
-
 class ListNode {
 	int data; 
 	ListNode next;
@@ -15,8 +13,6 @@ class ListNode {
 public class MergeSortLinkedList {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
 		int[] num = {1, 6, 9, 4, 3, 5, 2, 8, 10, 7};
 		ListNode head = null;
 		ListNode newNode = null;

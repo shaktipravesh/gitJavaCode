@@ -1,6 +1,5 @@
 package com.java.algoNDataStucture.workat;
 
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
@@ -17,8 +16,6 @@ public class MapOverlappingIntervals {
 	int[][] mergeIntervals(int[][] intervals) {
 	    // add your logic here
 		int[][] uniqueTempIntervals;
-		int iNum = 30;
-		int isqrt = (int) Math.sqrt(iNum);
 		TreeMap<Integer, Integer> treeMap = new TreeMap<Integer, Integer>();
 		for(int i = 0; i < intervals.length; i++) {
 			//treeMap.put(intervals[i][0], intervals[i][1]);
