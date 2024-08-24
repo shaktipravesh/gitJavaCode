@@ -27,6 +27,7 @@ public class ClimbStairs {
 		return distinctWays[n];
 	}
 
+	/*
 	private int distinctWaysclimbStairs(int[] distinctWays, int n) {
 		// TODO Auto-generated method stub
 		if(distinctWays[n] != 0) {
@@ -34,6 +35,7 @@ public class ClimbStairs {
 		}
 		return distinctWaysclimbStairs(distinctWays, n-2) + distinctWaysclimbStairs(distinctWays, n -1);
 	}
+	*/
 	
 
 }
