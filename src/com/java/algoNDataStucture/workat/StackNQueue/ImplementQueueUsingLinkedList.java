@@ -1,7 +1,5 @@
 package com.java.algoNDataStucture.workat.StackNQueue;
 
-import java.util.List;
-
 public class ImplementQueueUsingLinkedList {
 
 	public static void main(String[] args) {
