@@ -1,7 +1,5 @@
 package com.java.algoNDataStucture.workat.StackNQueue;
 
-import java.security.DrbgParameters.Capability;
-
 public class ImplementStackUsingLinkedList {
 
 	public static void main(String[] args) {
