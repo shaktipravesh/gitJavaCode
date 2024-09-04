@@ -1,4 +1,4 @@
-package com.java.algoNDataStucture.workat;
+package com.java.algoNDataStucture.workat.backTracking;
 
 import java.util.Scanner;
 
