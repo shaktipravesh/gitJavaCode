@@ -3,6 +3,7 @@ package com.java.algoNDataStucture.workat;
 class ListNode {
 	int data; 
 	ListNode next;
+	ListNode down;
 	public ListNode(int data) {
 		this.data = data;
 		this.next = null;
