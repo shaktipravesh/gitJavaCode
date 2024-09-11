@@ -51,16 +51,7 @@ public class InorderSuccessorOfNodeInBST {
 	
 	
 	Node removeFromBst(Node root, int key) {
-		Node removeNodeRoot = findParentNode(root, key);
-		
 		return root;
-	}
-
-	private Node findParentNode(Node root, int key) {
-		if(root != null) {
-			return root;
-		}
-		return null;
 	}
 }
 
