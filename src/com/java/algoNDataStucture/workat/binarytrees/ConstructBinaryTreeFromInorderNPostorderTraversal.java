@@ -1,10 +1,12 @@
 package com.java.algoNDataStucture.workat.binarytrees;
 
+import java.util.stream.IntStream;
+
 public class ConstructBinaryTreeFromInorderNPostorderTraversal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		IntStream.range(1, 10).forEach(val -> System.out.println(val));
 	}
 
 	Node constructTree(int[] postorder, int[] inorder) {
