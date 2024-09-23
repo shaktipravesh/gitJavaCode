@@ -1,11 +1,24 @@
 package com.java.algoNDataStucture.workat.graphs;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class DetectCycleInDirectedGraph {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int iNodes = sc.nextInt();
+		ArrayList<Integer>[] adjList = new ArrayList[iNodes];
+		for(int i = 0; i <iNodes; i++) {
+			adjList[i] = new ArrayList<Integer>();
+			int connectionCount = sc.nextInt();
+			for(int j = 0; j < connectionCount; j++) {
+				adjList[i].add(sc.nextInt());
+			}
+		}
+		DetectCycleInDirectedGraph detectCycleInDirectedGraph = new DetectCycleInDirectedGraph();
+		boolean cycleDetected = detectCycleInDirectedGraph.isCyclic(adjList);
+		System.out.println(cycleDetected);
 
 	}
 
