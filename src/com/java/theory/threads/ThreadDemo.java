@@ -2,27 +2,26 @@ package com.java.theory.threads;
 
 class A extends Thread{
 	public void run() {
-		for(int i = 0; i < 20; i++) {
-			System.out.println("Hi A");
-			try {
-				Thread.sleep(3);
-			} catch (InterruptedException e) {
-				System.out.println(e.getMessage());
-				e.printStackTrace();
-			}
-		}
+		PrintThreadRequest printThreadRequest = new PrintThreadRequest();
+		printThreadRequest.printThread("Hi A");
 	}
 }
 
 class B extends Thread{
 	public void run() {
+		PrintThreadRequest printThreadRequest = new PrintThreadRequest();
+		printThreadRequest.printThread("Hi BB");
+	}
+}
+
+class PrintThreadRequest {
+	void printThread(String str) {
 		for(int i = 0; i < 20; i++) {
-			System.out.println("Hi BB");
+			System.out.println(str);
 			try {
 				Thread.sleep(3);
 			} catch (InterruptedException e) {
 				System.out.println(e.getMessage());
-				e.printStackTrace();
 			}
 		}
 	}
