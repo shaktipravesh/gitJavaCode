@@ -2,7 +2,7 @@ package com.java.theory.threads;
 
 class Counter {
 	int count;
-	public void increament() {
+	public synchronized void increament() {
 		count++;
 	}
 	

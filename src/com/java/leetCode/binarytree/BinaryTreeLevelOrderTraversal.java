@@ -58,7 +58,7 @@ public class BinaryTreeLevelOrderTraversal {
     	valLevelOrder.add(root.val);
     	levelOrderValLists.add(valLevelOrder);
     	while(levelOrderNodeLists.size()> 0) {
-    		List<TreeNode> currNodeLevel = levelOrderNodeLists.getLast();
+    		List<TreeNode> currNodeLevel = levelOrderNodeLists.get(0);
     		List<TreeNode> childNodeLevel = new ArrayList<TreeNode>();
     		List<Integer> childValLevel = new ArrayList<Integer>();
     		for(int j = 0; j < currNodeLevel.size(); j++) {
@@ -71,7 +71,7 @@ public class BinaryTreeLevelOrderTraversal {
     				childValLevel.add(currNodeLevel.get(j).right.val);
     			}
     		}
-    		levelOrderNodeLists.removeLast();
+    		levelOrderNodeLists.remove(0);
     		levelOrderNodeLists.add(childNodeLevel);
     		levelOrderValLists.add(childValLevel);
     	}
