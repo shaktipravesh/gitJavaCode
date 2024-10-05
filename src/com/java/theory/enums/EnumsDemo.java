@@ -5,9 +5,9 @@ import java.util.Arrays;
 public class EnumsDemo {
 
 	public static void main(String[] args) {
-//		DayClassMethod();
-//		DayInterfaceMethod();
-//		DayEnumMethod();
+		DayClassMethod();
+		DayInterfaceMethod();
+		DayEnumMethod();
 
 		DayEnum monday = DayEnum.MONDAY;
 		int ordinal = monday.ordinal();
