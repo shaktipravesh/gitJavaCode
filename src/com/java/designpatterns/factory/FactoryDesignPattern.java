@@ -61,7 +61,6 @@ class Client {
 		return pVehicle;
 	}
 	
-	
 	/*
 	int wheelCount;
 	private Vehicle vehicle;
