@@ -1,5 +1,24 @@
 package com.java.designpatterns.factory;
 
+
+interface VehicleFactory {
+	Vehicle createVehicle();
+}
+
+class TwoWheelerFactory implements VehicleFactory{
+	@Override
+	public Vehicle createVehicle() {
+		return new TwoWheeler();
+	}
+}
+
+class FourWheelerFactory implements VehicleFactory{
+	@Override
+	public Vehicle createVehicle() {
+		return new FourWheeler();
+	}
+}
+
 abstract class Vehicle {
 	public abstract void printVehicle();
 }
@@ -31,6 +50,18 @@ class FourWheeler extends Vehicle {
 }
 
 class Client {
+	
+	private Vehicle pVehicle;
+
+	public Client(VehicleFactory factory) {
+		pVehicle = factory.createVehicle();
+	}
+
+	public Vehicle getpVehicle() {
+		return pVehicle;
+	}
+	
+	/*
 	int wheelCount;
 	private Vehicle vehicle;
 	
@@ -45,11 +76,25 @@ class Client {
 			vehicle = new FourWheeler();
 		}
 	}
+	*/
 }
+
 
 public class FactoryDesignPattern {
 
 	public static void main(String[] args) {
+		
+		VehicleFactory twoWheelerFactory = new TwoWheelerFactory();
+		Client twoWheelerClient = new Client(twoWheelerFactory);
+		Vehicle twoWheeler = twoWheelerClient.getpVehicle();
+		twoWheeler.printVehicle();
+		
+		VehicleFactory foruWheelerFactory = new FourWheelerFactory();
+		Client fourWheelerClient = new Client(foruWheelerFactory);
+		Vehicle fourWheeler = fourWheelerClient.getpVehicle();
+		fourWheeler.printVehicle();
+		
+		/*
 		Client client = new Client(2);
 		Vehicle clientVehicle  = client.getVehicle();
 		clientVehicle.printVehicle();
@@ -58,6 +103,7 @@ public class FactoryDesignPattern {
 		
 		FourWheeler car = new FourWheeler();
 		car.vehicleBreak();
+		*/
 	}
 
 }
