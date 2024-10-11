@@ -3,11 +3,14 @@ package com.java8.features.lambda;
 @FunctionalInterface
 interface Printhello {
 	public void sayHello();
+	
 }
 
 @FunctionalInterface
 interface Child extends Printhello{
-
+	default public void sayBye() {
+		System.out.println("Child say Bye");
+	}
 }
 
 interface Sum {
