@@ -1,0 +1,13 @@
+package com.java8.features.lambda.thread;
+
+public class LambdaUsingThreadImpl implements Runnable {
+
+	@Override
+	public void run() {
+		for (int i = 0; i < 10; i++) {
+			System.out.println("LambdaUsingThreadImpl using normal: " + i);
+		}
+	}
+
+	
+}
