@@ -14,7 +14,7 @@ class Child implements Parent {
 	}
 }
 
-public class defaultMethods {
+public class defaultMethod {
 	public static void main(String[] args) {
 		Child child = new Child();
 		child.sayHallo();
