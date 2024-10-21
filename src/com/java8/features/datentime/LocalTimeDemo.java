@@ -15,7 +15,9 @@ public class LocalTimeDemo {
 		
 		LocalTime beforeOneHourTime = localTime.minusHours(2);
 		System.out.println(beforeOneHourTime);
-		
+
+		localTime.minusHours(3);
+
 	}
 
 }
