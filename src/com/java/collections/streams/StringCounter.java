@@ -25,8 +25,8 @@ public class StringCounter {
 		System.out.println(outPut);
 		
 		
-		//{2, 4, 6, 8, 2, 10, 4, 12, 6};
-		//[2,4,36,8,2,10,4,144,36]
+		//Input: {2, 4, 6, 8, 2, 10, 4, 12, 6}; -> If divisble by three the =n square else same number
+		//Output: [2,4,36,8,2,10,4,144,36]
 		
 		Integer[] intArray = {2, 4, 6, 8, 2, 10, 4, 12, 6};
 		IntStream stream = IntStream.of(2, 4, 6, 8, 2, 10, 4, 12, 6); 
