@@ -12,21 +12,21 @@ abstract class RechargePlan {
 }
 
 class PersonalPlan extends RechargePlan {
-    //@Override
+    @Override
     public void getRechargePlan() {
         amountRate = 100;
     }
 }
 
 class CorporatePlan extends RechargePlan {
-    //@Override
+    @Override
     public void getRechargePlan() {
         amountRate = 150;
     }
 }
 
 class ComboPlan extends RechargePlan {
-    //@Override
+    @Override
     public void getRechargePlan() {
         amountRate = 200;
     }
