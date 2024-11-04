@@ -77,7 +77,6 @@ class BikeHelmet implements PeripheralDecorator {
 }
 public class DecoratorBikeMain {
     public static void main(String[] args) {
-        //CountryDelight + ExtraCheese
         BaseBike baseBike = new MountainBike();
         System.out.println(baseBike.priceBike());
         baseBike = new BikeLight(baseBike);
