@@ -1,8 +1,12 @@
 package com.java.designpatterns.strategy;
 
+import com.java.designpatterns.strategy.withStrategy.NormalDriveStrategy;
+import com.java.designpatterns.strategy.withStrategy.SportsDriveStrategy;
+
 public class OffRoadVehicle extends Vehicle {
-    public OffRoadVehicle() {
-        System.out.println("Off Road Vehicle");
+
+    OffRoadVehicle() {
+        super(new NormalDriveStrategy());
     }
 
     @Override

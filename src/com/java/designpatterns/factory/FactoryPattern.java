@@ -6,8 +6,9 @@ abstract class RechargePlan {
     protected Integer amountRate;
     abstract void getRechargePlan();
 
-    public void getRechargeAmount(int quantity) {
+    public int getRechargeAmount(int quantity) {
         System.out.println("Recharge Amount: " + this.amountRate*quantity);
+        return this.amountRate*quantity;
     }
 }
 
@@ -61,14 +62,11 @@ public class FactoryPattern {
         int amount = sc.nextByte();
 
         RechargePlan rechargePlan = rechargePlanFactory.getRechargePlan(planType);
-        //rechargePlan.getRechargeAmount(amount);
-        //System.out.println("Recharge Amount: " + rechargePlan.getRechargeAmount(amount));
-        //System.out.println("Recharge Plan: " + rechargePlan.amountRate);
 
         System.out.print("Bill amount for "+planType+" of  "+amount+" units is: ");
         rechargePlan.getRechargePlan();
         rechargePlan.getRechargeAmount(amount);
-
+        System.out.println("Recharge Amount: "+rechargePlan.getRechargeAmount(amount));
 
 
     }
