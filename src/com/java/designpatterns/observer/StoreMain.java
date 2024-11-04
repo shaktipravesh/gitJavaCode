@@ -1,6 +1,6 @@
 package com.java.designpatterns.observer;
 
-import com.java.designpatterns.observer.Observable.MobileObservableImpl;
+import com.java.designpatterns.observer.Observable.StocksObservableImpl;
 import com.java.designpatterns.observer.Observable.StocksObservable;
 import com.java.designpatterns.observer.Observer.EmailAlertObserverImpl;
 import com.java.designpatterns.observer.Observer.MobileAlertObservableImpl;
@@ -8,7 +8,7 @@ import com.java.designpatterns.observer.Observer.NotificationAlertObserver;
 
 public class StoreMain {
     public static void main(String[] args) {
-        StocksObservable mobileStockObservable = new MobileObservableImpl();
+        StocksObservable mobileStockObservable = new StocksObservableImpl();
 
         NotificationAlertObserver observer1 = new EmailAlertObserverImpl("shaktipravesh@gmail.com", mobileStockObservable);
         NotificationAlertObserver observer2 = new EmailAlertObserverImpl("rathorebeena@gmail.com", mobileStockObservable);

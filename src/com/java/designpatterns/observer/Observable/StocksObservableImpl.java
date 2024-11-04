@@ -5,7 +5,7 @@ import com.java.designpatterns.observer.Observer.NotificationAlertObserver;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MobileObservableImpl implements StocksObservable {
+public class StocksObservableImpl implements StocksObservable {
 
     public List<NotificationAlertObserver> observersList = new ArrayList<NotificationAlertObserver>();
     public int stockCount = 0;
