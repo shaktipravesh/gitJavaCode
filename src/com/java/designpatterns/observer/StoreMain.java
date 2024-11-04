@@ -27,7 +27,9 @@ public class StoreMain {
         System.out.println();
         mobileStockObservable.setStockCount(-7);
         System.out.println();
+        mobileStockObservable.removeObserver(observer1);
         mobileStockObservable.setStockCount(3);
+        System.out.println("Stock Count: " + mobileStockObservable.getStockCount());
 
     }
 }
