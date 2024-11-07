@@ -1,4 +1,4 @@
-package com.java.designpatterns.builder;
+package com.java.designpatterns.builder.phone;
 
 public class Shop {
 	public static void main (String args[]) {
