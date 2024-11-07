@@ -9,24 +9,27 @@ public class PersonalDetailBuilder {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public PersonalDetailBuilder setFirstName(String firstName) {
         this.firstName = firstName;
+        return this;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public PersonalDetailBuilder setLastName(String lastName) {
         this.lastName = lastName;
+        return this;
     }
 
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public PersonalDetailBuilder setAge(int age) {
         this.age = age;
+        return this;
     }
 
     PersonalDetail getPersonalDetail() {
