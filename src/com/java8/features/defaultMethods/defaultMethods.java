@@ -26,7 +26,7 @@ public class defaultMethods implements A, B {
 	public static void main(String[] args) {
 		defaultMethods defaultMethods = new defaultMethods();
 		defaultMethods.nameA();
-		defaultMethods.nameA();
+		defaultMethods.nameB();
 		defaultMethods.name();
 
 	}
