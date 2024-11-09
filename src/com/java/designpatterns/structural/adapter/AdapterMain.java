@@ -5,6 +5,7 @@ public class AdapterMain {
         Mobile mobile = new Adpater();
         Timer timer = new Timer();
         timer.setMobile(mobile);
+        timer.getMobile().display("Shakti Pravesh");
         timer.displayTimer("This is timer.");
     }
 }
