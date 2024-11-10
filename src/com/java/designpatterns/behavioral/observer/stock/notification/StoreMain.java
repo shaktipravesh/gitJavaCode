@@ -1,10 +1,10 @@
-package com.java.designpatterns.behavioral.observer;
+package com.java.designpatterns.behavioral.observer.stock.notification;
 
-import com.java.designpatterns.behavioral.observer.Observable.StocksObservableImpl;
-import com.java.designpatterns.behavioral.observer.Observable.StocksObservable;
-import com.java.designpatterns.behavioral.observer.Observer.EmailAlertObserverImpl;
-import com.java.designpatterns.behavioral.observer.Observer.MobileAlertObservableImpl;
-import com.java.designpatterns.behavioral.observer.Observer.NotificationAlertObserver;
+import com.java.designpatterns.behavioral.observer.stock.notification.Observable.StocksObservableImpl;
+import com.java.designpatterns.behavioral.observer.stock.notification.Observable.StocksObservable;
+import com.java.designpatterns.behavioral.observer.stock.notification.Observer.EmailAlertObserverImpl;
+import com.java.designpatterns.behavioral.observer.stock.notification.Observer.MobileAlertObservableImpl;
+import com.java.designpatterns.behavioral.observer.stock.notification.Observer.NotificationAlertObserver;
 
 public class StoreMain {
     public static void main(String[] args) {

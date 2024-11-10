@@ -1,6 +1,6 @@
-package com.java.designpatterns.behavioral.observer.Observable;
+package com.java.designpatterns.behavioral.observer.stock.notification.Observable;
 
-import com.java.designpatterns.behavioral.observer.Observer.NotificationAlertObserver;
+import com.java.designpatterns.behavioral.observer.stock.notification.Observer.NotificationAlertObserver;
 
 import java.util.ArrayList;
 import java.util.List;

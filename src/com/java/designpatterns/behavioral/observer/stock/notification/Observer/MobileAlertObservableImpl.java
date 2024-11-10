@@ -1,6 +1,6 @@
-package com.java.designpatterns.behavioral.observer.Observer;
+package com.java.designpatterns.behavioral.observer.stock.notification.Observer;
 
-import com.java.designpatterns.behavioral.observer.Observable.StocksObservable;
+import com.java.designpatterns.behavioral.observer.stock.notification.Observable.StocksObservable;
 
 public class MobileAlertObservableImpl implements NotificationAlertObserver {
     String userName;
