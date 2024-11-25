@@ -10,12 +10,12 @@ public class ChannelSubscriberMain {
         Subscriber subscriber5 = new Subscriber("Vincit");
         Subscriber subscriber6 = new Subscriber("Beena");
 
-        ch.addSubScriber(subscriber1);
-        ch.addSubScriber(subscriber2);
-        ch.addSubScriber(subscriber3);
-        ch.addSubScriber(subscriber4);
-        ch.addSubScriber(subscriber5);
-        ch.addSubScriber(subscriber6);
+        ch.addSubscriber(subscriber1);
+        ch.addSubscriber(subscriber2);
+        ch.addSubscriber(subscriber3);
+        ch.addSubscriber(subscriber4);
+        ch.addSubscriber(subscriber5);
+        ch.addSubscriber(subscriber6);
 
         subscriber1.subscribeChannel(ch);
         subscriber2.subscribeChannel(ch);
@@ -25,6 +25,16 @@ public class ChannelSubscriberMain {
         subscriber6.subscribeChannel(ch);
 
         ch.uploadNewVideo("Panchayat Season 4");
+        ch.removeSubscriber(subscriber1);
+        System.out.println();
+
+        ch.uploadNewVideo("Gullak Season 4");
+        ch.removeSubscriber(subscriber2);
+        System.out.println();
+
+        ch.removeVideo("Panchayat Season 4");
+
+
 
     }
 }

@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Channel {
-    private List<Subscriber> subscribers = new ArrayList<>();
-    private String title;
+    private final List<Subscriber> subscribers = new ArrayList<>();
+    List<String> titleList = new ArrayList<>();
 
-    public void addSubScriber(Subscriber subscriber) {
+    public void addSubscriber(Subscriber subscriber) {
         subscribers.add(subscriber);
     }
 
-    public void removeSubScriber(Subscriber subscriber) {
+    public void removeSubscriber(Subscriber subscriber) {
         subscribers.remove(subscriber);
     }
 
@@ -21,8 +21,15 @@ public class Channel {
         }
     }
 
+    public void removeVideo(String Title) {
+        if(titleList.contains(Title)) {
+            titleList.remove(Title);
+            notify("Removed video: " + Title);
+        }
+    }
+
     public void uploadNewVideo(String title) {
-        this.title = title;
+        titleList.add(title);
         notify("New Video Upload: " + title);
     }
 }
