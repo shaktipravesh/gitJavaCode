@@ -4,7 +4,6 @@ public class SingletonPattern {
 
 	public static void main(String[] args) {
 		Singleton.getInstance();
-
 	}
 
 }
@@ -12,7 +11,7 @@ public class SingletonPattern {
 class Singleton {
 
 	private static Singleton instance;
-	public Singleton() {
+	private Singleton() {
 		System.out.println("Singleton is Instantiated.");
 	}
 
