@@ -6,6 +6,8 @@ public class SubsequencesOfString {
     public static void main(String[] args) {
         ArrayList<String> result = subsequences("bbb");
         System.out.println(result);
+        result = subsequences("abc");
+        System.out.println(result);
     }
 
     public static ArrayList<String> subsequences(String str) {
