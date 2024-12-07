@@ -25,6 +25,5 @@ public class PrintDivisorList {
         }
         divisorList.sort(Comparator.comparing(Integer::intValue));
         return divisorList;
-
     }
 }
