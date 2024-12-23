@@ -18,7 +18,6 @@ public class NthFibonacciNumber {
     public static long getFibonacciNumber (int n) {
         long[][] baseMatrix = {{1, 1}, {1, 0}};
         long[][] resultMatrix = {{1, 0}, {0, 1}};
-        long modValue = 1000000007;
         while (n > 0) {
             if((n&1) == 1) {
                 resultMatrix = multiplyMatrix(baseMatrix, resultMatrix);
@@ -26,7 +25,7 @@ public class NthFibonacciNumber {
             baseMatrix = multiplyMatrix(baseMatrix, baseMatrix);
             n = n>>1;
         }
-        return (int)resultMatrix[0][0]%modValue;
+        return (int)resultMatrix[0][0];
     }
 
     private static long[][] multiplyMatrix(long[][] baseMatrix, long[][] resultMatrix) {
