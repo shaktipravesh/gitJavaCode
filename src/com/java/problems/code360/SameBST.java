@@ -16,8 +16,8 @@ public class SameBST {
     }
 
     public static void main(String[] args) {
-        TreeNode<Integer> root1;
-        TreeNode<Integer> root2;
+        TreeNode<Integer> root1 = null;
+        TreeNode<Integer> root2 = null;
         int[] num1 = {8, 5, 10, 2, 6, -1, -1, -1, -1, -1, 7, -1, -1};
         int[] num2 = {10, 5, -1, -1, 2, 8, -1, -1, 6, -1, -1};
         TreeNode<Integer>[] node1 = new TreeNode[num1.length];
