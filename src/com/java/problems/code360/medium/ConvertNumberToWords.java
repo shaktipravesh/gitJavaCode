@@ -6,33 +6,33 @@ public class ConvertNumberToWords {
     }
 
     public static String handleAll(long n) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         String[] ones = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
         String[] teens = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
-        String[] tens = {"", "ten", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"};
-        String[] devisorsStr = {"and", "hundred", "thousand", "lakh", "crore"};
-        long[] devisers = {1, 100, 1000, 100000, 10000000};
+        String[] tens = {"", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+        String[] divisorsStr = {"and", "hundred", "thousand", "lakh", "crore"};
+        long[] dividers = {1, 100, 1000, 100000, 10000000};
         for(int i = 4 ; i >= 0; i-- ) {
-            long quotient = n/devisers[i];
-            n = n%devisers[i];
+            long quotient = n/dividers[i];
+            n = n%dividers[i];
             if(quotient != 0) {
                 if(n==0) {
-                    result += devisorsStr[i] +" ";
+                    result.append(divisorsStr[i]).append(" ");
                 }
                 if(quotient > 9 && quotient < 20) {
-                    result += teens[(int)quotient%10] + " ";
+                    result.append(teens[(int) quotient % 10]).append(" ");
                 } else {
                     if(quotient/10 > 0) {
-                        result += tens[(int)quotient/10] + " ";
+                        result.append(tens[(int) quotient / 10]).append(" ");
                     } if(quotient%10 > 0) {
-                        result += ones[(int)quotient%10] + " ";
+                        result.append(ones[(int) quotient % 10]).append(" ");
                     }
                 }
                 if(n >0) {
-                    result += devisorsStr[i] +" ";
+                    result.append(divisorsStr[i]).append(" ");
                 }
             }
         }
-        return result;
+        return result.toString();
     }
 }
