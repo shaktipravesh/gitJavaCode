@@ -1,9 +1,13 @@
 package com.java8.features.stream;
 
 import java.util.*;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+import static java.lang.System.*;
+
 public class SteamAPI {
+    Logger logger = Logger.getLogger("SteamAPI");
     public static void main(String[] args) {
         List<Employee> employees = Arrays.asList(
                 new Employee(1, "Alice", "HR", 55000, 28),
@@ -30,14 +34,14 @@ public class SteamAPI {
 
     private static void findingTheOldestAndYoungestEmployee(List<Employee> employees) {
         Employee employeeYoungest = employees.stream().min(Comparator.comparing(Employee::getAge)).get();
-        System.out.println(employeeYoungest);
+        out.println(employeeYoungest);
         int youngestAge = employees.stream().mapToInt(Employee::getAge).min().getAsInt();
-        System.out.println(youngestAge);
+        out.println(youngestAge);
 
         Employee employeeOldest = employees.stream().max(Comparator.comparing(Employee::getAge)).get();
-        System.out.println(employeeOldest);
+        out.println(employeeOldest);
         int oldestAge = employees.stream().mapToInt(Employee::getAge).max().getAsInt();
-        System.out.println(oldestAge);
+        out.println(oldestAge);
     }
 
     private static void creatingCustomCollectors(List<Employee> employees) {
@@ -45,44 +49,43 @@ public class SteamAPI {
         String concatenatedNames = employees.stream()
                 .map(Employee::getName)
                 .collect(Collectors.joining(", "));
-        System.out.println("Concatenated Names: " + concatenatedNames);
+        out.println("Concatenated Names: " + concatenatedNames);
     }
 
     private static void findingSumOrCustomAggregation(List<Employee> employees) {
-        //double sumSalaries = employees.stream().map(Employee::getSalary).reduce(0.0, Double::sum);
         // Sum of salaries using reduce
         double sumSalaries = employees.stream()
                 .map(Employee::getSalary)
                 .reduce(0, Integer::sum);
-        System.out.println("Sum of Salaries (reduce): " + sumSalaries);
+        out.println("Sum of Salaries (reduce): " + sumSalaries);
     }
 
     private static void checkingAllAnyOrNoneConditions(List<Employee> employees) {
         boolean isHighSalary = employees.stream().allMatch(employee -> employee.getSalary() > 65000);
-        System.out.println(isHighSalary);
+        out.println(isHighSalary);
         boolean isAverageSalary = employees.stream().anyMatch(employee -> employee.getSalary() > 50000);
-        System.out.println(isAverageSalary);
+        out.println(isAverageSalary);
 
         boolean isAnyHR = employees.stream().anyMatch(employee -> employee.getDepartment() == "HR");
-        System.out.println(isAnyHR);
+        out.println(isAnyHR);
 
 
     }
 
     private static void countingEmployeesInEachDepartment(List<Employee> employees) {
         Map<String, Long> employeeCtByDepartment = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
-        System.out.println(employeeCtByDepartment);
+        out.println(employeeCtByDepartment);
     }
 
     private static void partitioningEmployeesBasedOnSalary(List<Employee> employees) {
         employees.stream().filter(employee -> employee.getSalary() > 65000).collect(Collectors.toList()).forEach(employee -> {
-            System.out.println(employee);
+            out.println(employee);
         });
     }
 
     private static void groupingEmployeesByDepartment(List<Employee> employees) {
         Map<String, List<Employee>> groupedByDepartment = employees.stream().collect(Collectors.groupingBy(Employee::getDepartment));
-        System.out.println(groupedByDepartment);
+        out.println(groupedByDepartment);
     }
 
     private static void calculatingSumAverageMinAndMax(List<Employee> employees) {
@@ -91,37 +94,38 @@ public class SteamAPI {
         int salaryMin = employees.stream().mapToInt(Employee::getSalary).min().getAsInt();
         int salaryMax = employees.stream().mapToInt(Employee::getSalary).max().getAsInt();
         int salaryAvg = (int)employees.stream().mapToInt(Employee::getSalary).average().getAsDouble();
-        System.out.println(salaries);
-        System.out.println(salarySum);
-        System.out.println(salaryMin);
-        System.out.println(salaryMax);
-        System.out.println(salaryAvg);
+        out.println(salaries);
+        out.println(salarySum);
+        out.println(salaryMin);
+        out.println(salaryMax);
+        out.println(salaryAvg);
     }
 
     private static void getListOfEmployeeName(List<Employee> employees) {
         List<String> employeeNames = employees.stream().map(Employee::getName).toList();
-        System.out.println(employeeNames);
+        out.println(employeeNames);
         List<String> employeeList = employees.stream().map(Employee::getName).collect(Collectors.toList());
+
     }
 
     private static void sortEmployeeBasedOnSalaryNAge(List<Employee> employees) {
-        System.out.println(employees.stream().sorted(Comparator.comparing(Employee::getSalary)).toList());
-        employees.stream().sorted(Comparator.comparing(Employee::getSalary).reversed()).toList().forEach(System.out::println);
-        employees.stream().sorted(Comparator.comparing(Employee::getAge)).toList().forEach(employee -> System.out.println(employee.getName() +", " +employee.getAge()));
+        out.println(employees.stream().sorted(Comparator.comparing(Employee::getSalary)).toList());
+        employees.stream().sorted(Comparator.comparing(Employee::getSalary).reversed()).toList().forEach(out::println);
+        employees.stream().sorted(Comparator.comparing(Employee::getAge)).toList().forEach(employee -> out.println(employee.getName() +", " +employee.getAge()));
 
     }
 
     private static void filteringEmployeeBasedOnCondition(List<Employee> employees) {
         List<Employee> highEarners = employees.stream().filter(employee -> employee.salary> 60000).toList();
         highEarners.forEach(employee -> {
-            System.out.println(employee.getName());
+            out.println(employee.getName());
         });
 
         employees.stream().filter(employee -> employee.salary > 60000).forEach(employee ->
-                System.out.println(employee.getName()));
+                out.println(employee.getName()));
 
         //get count
-        System.out.println(employees.stream().filter(employee -> employee.getSalary() > 65000).count());
+        out.println(employees.stream().filter(employee -> employee.getSalary() > 65000).count());
     }
 }
 
