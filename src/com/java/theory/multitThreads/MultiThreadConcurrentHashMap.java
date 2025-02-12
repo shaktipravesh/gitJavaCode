@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class MultiThreadConcurrentHashMap {
     public static void main(String[] args) {
-        //basicHashMap();
+        basicHashMap();
         concurrentHashMap();
 
     }
