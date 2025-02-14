@@ -16,6 +16,6 @@ public interface Child extends Parent{
 public interface Child extends Parent{
 	public void SayHallo();
 	default void SayBye() {
-		System.out.println("Say Bye");
+		System.out.println("Say Bye to child");
 	}
 }
