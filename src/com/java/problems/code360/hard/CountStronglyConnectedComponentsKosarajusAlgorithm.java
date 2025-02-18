@@ -21,7 +21,7 @@ public class CountStronglyConnectedComponentsKosarajusAlgorithm {
         }
     }
     public static int stronglyConnectedComponents(int v, ArrayList<ArrayList<Integer>> edges) {
-        int stronglyConnectedComponents = 1;
+        int stronglyConnectedComponents = 0;
         ArrayList<ArrayList<Integer>> vEdgeList = new ArrayList<>();
         ArrayList<ArrayList<Integer>> vTransposeEdgeList = new ArrayList<>();
         for(int i = 0; i < v; i++) {
@@ -36,10 +36,33 @@ public class CountStronglyConnectedComponentsKosarajusAlgorithm {
         Stack<Integer> stack = new Stack<>();
         int[] visited = new int[v];
         int currentNode = 0;
-        getDFS(vEdgeList, stack, visited, currentNode);
+        for(int i = 0; i < v; i++) {
+            if(visited[i] == 0) {
+                getDFS(vEdgeList, stack, visited, i);
+            }
+        }
+
         visited = new int[v];
-        stronglyConnectedComponents = getConnectedCountDFS(vTransposeEdgeList, stack, visited, currentNode, stronglyConnectedComponents);
+        while(!stack.isEmpty()) {
+            if(visited[stack.peek()] == 0) {
+                stronglyConnectedComponents++;
+                getConnectedCountDFS(vTransposeEdgeList, stack, visited, stack.pop());
+            } else {
+                stack.pop();
+            }
+        }
+        //stronglyConnectedComponents = getConnectedCountDFS(vTransposeEdgeList, stack, visited, currentNode, stronglyConnectedComponents);
         return stronglyConnectedComponents;
+    }
+
+    private static void getConnectedCountDFS(ArrayList<ArrayList<Integer>> vEdgeList, Stack<Integer> stack, int[] visited, int currentNode) {
+        ArrayList<Integer> edge = vEdgeList.get(currentNode);
+        visited[currentNode] = 1;
+        for (Integer integer : edge) {
+            if (visited[integer] == 0) {
+                getConnectedCountDFS(vEdgeList, stack, visited, integer);
+            }
+        }
     }
 
     private static int getConnectedCountDFS(ArrayList<ArrayList<Integer>> vEdgeList, Stack<Integer> stack, int[] visited, int currentNode, int stronglyConnectedComponents) {
