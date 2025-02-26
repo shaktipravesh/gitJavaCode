@@ -68,7 +68,7 @@ public class ReverseNodesInKGroup {
                 tail = end;
             }
         }
-        if(input != null) {
+        if(input != null && tail != null) {
             tail.next = input;
         }
 
