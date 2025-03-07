@@ -1,4 +1,4 @@
-package com.java.problems.code360.hard;
+package com.java.problems.code360.hard.incomplete;
 
 import java.util.Scanner;
 
