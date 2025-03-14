@@ -1,6 +1,5 @@
 package com.java8.features.stream;
 
-import java.sql.SQLOutput;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -13,6 +12,10 @@ public class StreamDemo {
 		list = (List<Integer>) list.stream().sorted((a, b) -> (b-a)).toList();
 		System.out.println(list);
 
+		String str = "Shakti:Pravesh,Beena:Rathore";
+		Map<String, String> map = Arrays.stream(str.split(",")).map(entry -> entry.split(":")).collect(Collectors.toMap(e -> e[0], e->e[1]));
+
+	
 		List<Integer> listNum = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
 		List<Integer> square = listNum.stream().map(n-> n*n).collect(Collectors.toList());
 		System.out.println(square);
@@ -23,11 +26,11 @@ public class StreamDemo {
 		List<Integer> evenNum = listNum.stream().filter(n-> n%2==0).collect(Collectors.toList());
 		System.out.println(evenNum);
 
-		Map<Integer, Integer> map = listNum.stream().collect(Collectors.toMap(n->n, n-> n%2 == 0? n*n : n));
+		Map<Integer, Integer> mapEvenSquare = listNum.stream().collect(Collectors.toMap(n->n, n-> n%2 == 0? n*n : n));
 		System.out.println(map);
 
 		List<String> nameList = new ArrayList<>(List.of("Shakti", "Pravesh"));
-		System.out.println(nameList.stream().map(str-> str.toUpperCase()).toList());
+		System.out.println(nameList.stream().map(st-> st.toUpperCase()).toList());
 
 		System.out.println(listNum.stream().mapToInt(n->n).sum());
 
