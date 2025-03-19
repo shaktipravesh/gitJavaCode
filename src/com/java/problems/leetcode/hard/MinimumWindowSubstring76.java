@@ -3,7 +3,15 @@ package com.java.problems.leetcode.hard;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.lang.System.*;
+
 public class MinimumWindowSubstring76 {
+    public static void main(String[] args) {
+        MinimumWindowSubstring76 solver = new MinimumWindowSubstring76();
+        out.println(solver.minWindow("ADOBECODEBANC", "ABC")); // Output: "BANC"
+        out.println(solver.minWindow("a", "a")); // Output: "a"
+        out.println(solver.minWindow("a", "aa")); // Output: ""
+    }
     public String minWindow(String s, String t) {
         if (s.length() < t.length()) return "";
 
