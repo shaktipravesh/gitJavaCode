@@ -3,14 +3,17 @@ package com.java.theory.threads.reentrantlock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.Lock;
 
+import static java.lang.System.*;
+
 public class ReentrantLocks {
-    private final Lock lock = (Lock) new ReentrantLock();
+    private final Lock lock = new ReentrantLock();
     private int counter = 0;
 
     public void increment() {
         lock.lock();
         try{
             counter++;
+            out.println(Thread.currentThread().getName()  + ": " + counter);
         } finally {
             lock.unlock();
         }
@@ -25,7 +28,7 @@ public class ReentrantLocks {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ReentrantLocks lock = new ReentrantLocks();
         Runnable runnable = () -> {
             for (int i = 0; i < 10; i++) {
@@ -36,10 +39,8 @@ public class ReentrantLocks {
         Thread thread2 = new Thread(runnable);
         thread1.start();
         thread2.start();
-
-        thread1.start();
-        thread2.start();
-
-        System.out.println("Final Counter: " + lock.getCounter());
+        thread1.join();
+        thread2.join();
+        out.println("Final Counter: " + lock.getCounter());
     }
 }
