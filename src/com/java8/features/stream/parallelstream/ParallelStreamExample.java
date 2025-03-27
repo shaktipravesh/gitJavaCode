@@ -30,7 +30,7 @@ public class ParallelStreamExample {
 
         //devide list as "PostiveEven" , "NegativeEven", "PostiveOdd" and "NegativeOdd"
         Map<String, List<Integer>> mapList = list.stream().collect(Collectors.groupingBy(x -> {
-            return ((x % 2) == 0) ? (x > 0 ? "PositiveEven" : "NegativeEven") : (x > 0 ? "PositiveOdd" : "NegativeOdd");
+            return ((x % 2) == 0) ? x > 0 ? "PositiveEven" : "NegativeEven" : x > 0 ? "PositiveOdd" : "NegativeOdd";
         }));
         out.println(mapList);
 
