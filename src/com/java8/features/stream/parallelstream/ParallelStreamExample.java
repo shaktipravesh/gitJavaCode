@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+import static java.lang.System.*;
+
 public class ParallelStreamExample {
     Logger logger = Logger.getLogger(ParallelStreamExample.class.getName());
     public static void main(String[] args) {
@@ -17,12 +19,20 @@ public class ParallelStreamExample {
 
         //evenlist as true and odd as false
         Map<Boolean, List<Integer>> map = list.stream().collect(Collectors.partitioningBy(x -> x % 2 == 0));
+        out.println(map);
+
+        List<Integer> even = list.stream().filter(x -> x % 2 == 0).collect(Collectors.toList());
+        out.println(even);
 
         //evenlist as "Even" and Odd as "Odd"
         Map<String, List<Integer>> mp = list.stream().collect(Collectors.groupingBy(x -> x % 2 == 0 ? "Even" : "Odd"));
+        out.println(mp);
 
         //devide list as "PostiveEven" , "NegativeEven", "PostiveOdd" and "NegativeOdd"
-        Map<String, List<Integer>> mapList = list.stream().collect(Collectors.groupingBy(x -> x % 2 == 0 ? x > 0 ? "PositiveEven" : "NegativeEven" : x > 0 ? "PositiveOdd" : "NegativeOdd"));
+        Map<String, List<Integer>> mapList = list.stream().collect(Collectors.groupingBy(x -> {
+            return ((x % 2) == 0) ? (x > 0 ? "PositiveEven" : "NegativeEven") : (x > 0 ? "PositiveOdd" : "NegativeOdd");
+        }));
+        out.println(mapList);
 
         list.parallelStream().forEach(a-> logger.info(Thread.currentThread().getName() + " " + a));
 
@@ -31,9 +41,10 @@ public class ParallelStreamExample {
         // Grouping by length and counting occurrences in each group
         Map<Integer, Long> groupedByLength = words.stream()
                 .collect(Collectors.groupingBy(String::length, Collectors.counting()));
+        out.println(groupedByLength);
 
         Map<Integer, List<String>> groupStrByLength = words.stream().collect(Collectors.groupingBy(String::length));
-        System.out.println(groupStrByLength);
+        out.println(groupStrByLength);
 
         List<Employee> employees = Arrays.asList(
                 new Employee("John", 50000),
@@ -43,11 +54,11 @@ public class ParallelStreamExample {
                 new Employee("Alex", 40000)
         );
 
-        Employee employee = employees.stream().sorted(Comparator.comparingInt(e->e.getSalary())).toList().getLast();
-        System.out.println(employee);
+        Employee employee = employees.stream().sorted(Comparator.comparingInt(Employee::getSalary)).toList().getLast();
+        out.println(employee);
     }
 
-    class Employee {
+    static class Employee {
         String name;
         int salary;
         public Employee(String name, int salary) {
