@@ -18,6 +18,7 @@ public class AnagramPairs {
                     return new String(chars);
                 }));
 
+        out.println(groupedAnagrams.values().stream().toList());
         List<List<String>> anagramPairs = groupedAnagrams.values().stream()
                 .filter(group -> group.size() > 1)
                 .toList();
