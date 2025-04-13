@@ -1,4 +1,4 @@
 /bin/
 **.class
 */*.xml
-/.idea/shelf/Uncommitted_changes_before_Update_at_16-02-2025_08_28_[Changes]/.gitignore
+*.idea/*
