@@ -2,15 +2,17 @@ package com.java.problems.leetcode.medium;
 
 import java.util.Stack;
 
+import static java.lang.System.*;
+
 public class EvaluateReversePolishNotation150 {
     public static void main(String[] args) {
         String[] tokens01 = {"2","1","+","3","*"};
         String[] tokens02 = {"4","13","5","/","+"};
         String[] tokens03 = {"10","6","9","3","+","-11","*","/","*","17","+","5","+"};
         EvaluateReversePolishNotation150 eval = new EvaluateReversePolishNotation150();
-        System.out.println(eval.evalRPN(tokens01));
-        System.out.println(eval.evalRPN(tokens02));
-        System.out.println(eval.evalRPN(tokens03));
+        out.println(eval.evalRPN(tokens01));
+        out.println(eval.evalRPN(tokens02));
+        out.println(eval.evalRPN(tokens03));
 
     }
 
