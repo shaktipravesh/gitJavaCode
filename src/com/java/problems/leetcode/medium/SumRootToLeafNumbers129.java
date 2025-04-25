@@ -1,7 +1,6 @@
 package com.java.problems.leetcode.medium;
 
 import java.util.ArrayList;
-import com.java.problems.leetcode.medium.FlattenBinaryTreeToLinkedList114;
 
 public class SumRootToLeafNumbers129 {
     public static int sumNumbers(TreeNode root) {
@@ -31,16 +30,9 @@ public class SumRootToLeafNumbers129 {
         return sum;
     }
 
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
     }
 }
