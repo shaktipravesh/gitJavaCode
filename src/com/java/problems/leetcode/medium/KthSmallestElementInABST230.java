@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.TreeSet;
 
+import static java.lang.System.*;
+
 public class KthSmallestElementInABST230 {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3);
@@ -11,7 +13,7 @@ public class KthSmallestElementInABST230 {
         root.right = new TreeNode(4);
         root.left.right = new TreeNode(2);
         KthSmallestElementInABST230 kthSmallest = new KthSmallestElementInABST230();
-        System.out.println(kthSmallest.kthSmallest(root, 1));
+        out.println(kthSmallest.kthSmallest(root, 1));
     }
     public int kthSmallest(TreeNode root, int k) {
         TreeSet<Integer> set = new TreeSet<>();
