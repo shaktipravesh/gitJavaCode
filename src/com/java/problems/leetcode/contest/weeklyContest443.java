@@ -31,7 +31,7 @@ public class weeklyContest443 {
     }
 
     public int longestPalindrome(String s) {
-        if (s == null || s.length() == 0) return 0;
+        if (s == null || s.isEmpty()) return 0;
 
         // Preprocess: Convert "abc" -> "^#a#b#c#$"
         StringBuilder t = new StringBuilder("^");
