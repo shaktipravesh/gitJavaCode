@@ -1,6 +1,7 @@
 package com.java.problems.leetcode.medium;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 
 import static java.lang.System.*;
@@ -10,6 +11,7 @@ public class MaximumEventsAttended1353 {
         int[][] events = {{1,2}, {2,3}, {3,4}};
         MaximumEventsAttended1353 obj = new MaximumEventsAttended1353();
         out.println(obj.maxEvents(events));
+        HashMap map = new HashMap<>(5, 20);
     }
     public int maxEvents(int[][] events) {
         int eventAttended = 0;
