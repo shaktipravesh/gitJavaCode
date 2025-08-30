@@ -1,5 +1,7 @@
 package com.java.problems.leetcode.medium;
 
+import java.util.ArrayList;
+
 public class MaximumFruitsCollected3363 {
     public int maxCollectedFruits(int[][] fruits) {
         int[][] maxFruitsDP = new int[fruits.length][fruits[0].length];
