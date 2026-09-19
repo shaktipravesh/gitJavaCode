@@ -37,7 +37,7 @@ public class MaxPointsOnALine {
         return x/gcd +"/" + y/gcd;
     }
 
-    private static int getGCD(int x, int y) {
+    public static int getGCD(int x, int y) {
         if(y == 0) return x;
         return getGCD(y, x % y);
     }
