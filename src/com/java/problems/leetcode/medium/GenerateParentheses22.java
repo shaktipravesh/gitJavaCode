@@ -45,4 +45,34 @@ public class GenerateParentheses22 {
 
     }
 
+    public String removeOuterParentheses(String s) {
+        StringBuilder sb = new StringBuilder();
+        int depth = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if(c == '(') {
+                if(depth != 0) {
+                    sb.append('(');
+                }
+                depth++;
+            } else if(c == ')') {
+                depth--;
+                if(depth != 0) {
+                    sb.append(')');
+                }
+            }
+        }
+        return sb.toString();
+    }
+
+    public int sumOfSquares(int[] nums) {
+        int sum = 0;
+        int size = nums.length;
+        for(int i = 0; i < size; i++) {
+            if(size / (i+1) == 0) {
+                sum += nums[i]*nums[i];
+            }
+        }
+        return sum;
+    }
 }
